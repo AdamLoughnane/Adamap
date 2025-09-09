@@ -24,7 +24,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9FA525D52E638D28008F9E72 /* Chekoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chekoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FA525D52E638D28008F9E72 /* AdamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA525E22E638D2B008F9E72 /* ChekoffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChekoffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA525EC2E638D2B008F9E72 /* ChekoffUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChekoffUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -85,7 +85,7 @@
 		9FA525D62E638D28008F9E72 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9FA525D52E638D28008F9E72 /* Chekoff.app */,
+				9FA525D52E638D28008F9E72 /* AdamApp.app */,
 				9FA525E22E638D2B008F9E72 /* ChekoffTests.xctest */,
 				9FA525EC2E638D2B008F9E72 /* ChekoffUITests.xctest */,
 			);
@@ -95,9 +95,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9FA525D42E638D28008F9E72 /* Chekoff */ = {
+		9FA525D42E638D28008F9E72 /* AdamApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FA525F62E638D2B008F9E72 /* Build configuration list for PBXNativeTarget "Chekoff" */;
+			buildConfigurationList = 9FA525F62E638D2B008F9E72 /* Build configuration list for PBXNativeTarget "AdamApp" */;
 			buildPhases = (
 				9FA525D12E638D28008F9E72 /* Sources */,
 				9FA525D22E638D28008F9E72 /* Frameworks */,
@@ -110,11 +110,11 @@
 			fileSystemSynchronizedGroups = (
 				9FA525D72E638D28008F9E72 /* Chekoff */,
 			);
-			name = Chekoff;
+			name = AdamApp;
 			packageProductDependencies = (
 			);
 			productName = Chekoff;
-			productReference = 9FA525D52E638D28008F9E72 /* Chekoff.app */;
+			productReference = 9FA525D52E638D28008F9E72 /* AdamApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9FA525E12E638D2B008F9E72 /* ChekoffTests */ = {
@@ -200,7 +200,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9FA525D42E638D28008F9E72 /* Chekoff */,
+				9FA525D42E638D28008F9E72 /* AdamApp */,
 				9FA525E12E638D2B008F9E72 /* ChekoffTests */,
 				9FA525EB2E638D2B008F9E72 /* ChekoffUITests */,
 			);
@@ -258,12 +258,12 @@
 /* Begin PBXTargetDependency section */
 		9FA525E42E638D2B008F9E72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9FA525D42E638D28008F9E72 /* Chekoff */;
+			target = 9FA525D42E638D28008F9E72 /* AdamApp */;
 			targetProxy = 9FA525E32E638D2B008F9E72 /* PBXContainerItemProxy */;
 		};
 		9FA525EE2E638D2B008F9E72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9FA525D42E638D28008F9E72 /* Chekoff */;
+			target = 9FA525D42E638D28008F9E72 /* AdamApp */;
 			targetProxy = 9FA525ED2E638D2B008F9E72 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -400,6 +400,7 @@
 				DEVELOPMENT_TEAM = 7TX22DX7NB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Adamap;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +429,7 @@
 				DEVELOPMENT_TEAM = 7TX22DX7NB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Adamap;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -530,7 +532,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FA525F62E638D2B008F9E72 /* Build configuration list for PBXNativeTarget "Chekoff" */ = {
+		9FA525F62E638D2B008F9E72 /* Build configuration list for PBXNativeTarget "AdamApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9FA525F72E638D2B008F9E72 /* Debug */,

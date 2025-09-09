@@ -1,17 +1,14 @@
-//
-//  ChekoffApp.swift
-//  Chekoff
-//
-//  Created by Adam Loughnane on 30/08/2025.
-//
-
 import SwiftUI
 
 @main
 struct ChekoffApp: App {
+    init() {
+        NotificationManager.shared.requestPermission()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeScreen()
         }
     }
 }
