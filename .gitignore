@@ -1,3 +1,79 @@
+# Xcode
+.DS_Store
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+*.xcworkspace/xcuserdata/
+xcuserdata/
+
+# Swift Package Manager
+/.build/
+/Packages/
+/Package.resolved
+/*.xcodeproj/project.xcworkspace/xcuserdata/
+/DerivedData/
+
+# CocoaPods
+Pods/
+/Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Archives
+*.xcarchive
+
+# User-specific
+*.swp
+*.swo
+*.idea/
+*.iml
+*.hmap
+
+# Build products
+build/
+*.o
+*.lo
+*.la
+*.al
+*.so
+*.dylib
+*.nib
+*.map
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Audio/video/image caches
+*.m4v
+*.avi
+*.fli
+*.flc
+*.mov
+*.mp4
+*.mpg
+*.mpeg
+*.mp3
+*.midi
+*.mid
+*.wav
+*.aiff
+*.aif
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.tif
+*.ico
+
 *.xcuserstate
 DerivedData/
 build/

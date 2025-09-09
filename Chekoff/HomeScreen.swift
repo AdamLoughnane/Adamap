@@ -39,6 +39,8 @@ struct HomeScreen: View {
                         HomeButton(title: "Ars Memoria", systemImage: "brain.head.profile", color: .orange)
                     }
                     
+                  
+                    
                     NavigationLink {
                         Text("Statistics (coming soon)")
                             .font(.title3)
