@@ -6,8 +6,10 @@ struct FreeRecallTestView: View {
     }
     
     @AppStorage("freeRecallWords") private var savedWords: Data = Data()
+    @AppStorage("freeRecallDefs") private var savedDefs: Data = Data()
     
     @State private var inputWords: [String] = Array(repeating: "", count: 20)
+    @State private var inputDefs: [String] = Array(repeating: "", count: 20)   // NEW
     @State private var studyList: [String] = []
     @State private var recalledWords: String = ""
     @State private var phase: Phase = .input
@@ -26,21 +28,26 @@ struct FreeRecallTestView: View {
                 ScrollView {
                     VStack(spacing: 10) {
                         ForEach(0..<20, id: \.self) { i in
-                            TextField("Word \(i+1)", text: $inputWords[i])
-                                .textFieldStyle(RoundedBorderTextFieldStyle())
-                                .padding(.horizontal)
+                            HStack {
+                                TextField("Word \(i+1)", text: $inputWords[i])
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                                
+                                TextField("Definition", text: $inputDefs[i])   // NEW
+                                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                            }
+                            .padding(.horizontal)
                         }
                     }
                 }
                 
                 HStack {
-                    Button("Clear") {
+                    Button("Clear All") {
                         inputWords = Array(repeating: "", count: 20)
-                        savedWords = Data()   // clear from AppStorage
+                        inputDefs = Array(repeating: "", count: 20)
+                        saveWords()
                     }
-                    .padding()
                     .buttonStyle(.bordered)
-
+                    
                     Button("Start Test") {
                         studyList = inputWords
                             .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
@@ -48,9 +55,9 @@ struct FreeRecallTestView: View {
                         saveWords()
                         startStudyPhase()
                     }
-                    .padding()
                     .buttonStyle(.borderedProminent)
                 }
+                .padding()
                 
             case .study:
                 VStack {
@@ -60,9 +67,16 @@ struct FreeRecallTestView: View {
                     
                     ScrollView {
                         VStack(spacing: 8) {
-                            ForEach(studyList, id: \.self) { word in
-                                Text(word)
-                                    .font(.headline)
+                            ForEach(Array(inputWords.enumerated()), id: \.offset) { idx, word in
+                                if !word.isEmpty {
+                                    HStack {
+                                        Text(word).font(.headline)
+                                        if !inputDefs[idx].isEmpty {
+                                            Text("– \(inputDefs[idx])")
+                                                .foregroundColor(.secondary)
+                                        }
+                                    }
+                                }
                             }
                         }
                         .padding()
@@ -71,14 +85,13 @@ struct FreeRecallTestView: View {
                     Text("Time remaining: \(timeRemaining) sec")
                         .font(.headline)
                         .padding()
-
-                    Button("Skip") {
+                    
+                    Button("Skip ▶︎") {
                         timer?.invalidate()
                         startDelayPhase()
                     }
-                    .padding()
                     .buttonStyle(.bordered)
-                    
+                    .padding(.top, 10)
                 }
                 
             case .delay:
@@ -94,18 +107,18 @@ struct FreeRecallTestView: View {
                         .font(.largeTitle)
                         .bold()
                         .padding()
-
-                    Button("Skip") {
+                    
+                    Button("Skip ▶︎") {
                         timer?.invalidate()
                         phase = .recall
                     }
-                    .padding()
                     .buttonStyle(.bordered)
+                    .padding(.top, 10)
                 }
                 
             case .recall:
                 VStack {
-                    Text("Type all words you recall (space/comma/semicolon separated):")
+                    Text("Type all words you recall (space or comma separated):")
                         .multilineTextAlignment(.center)
                         .padding()
                     
@@ -122,33 +135,24 @@ struct FreeRecallTestView: View {
                 }
                 
             case .results:
-                // Build normalized sets once for scoring and display
-                let separators = CharacterSet(charactersIn: ",，;； \n\t")
-                let recalledSet: Set<String> = Set(
-                    recalledWords
-                        .components(separatedBy: separators)
-                        .map(normalize)
-                        .filter { !$0.isEmpty }
-                )
-                let normalizedStudy = studyList.map(normalize)
-                let correctCount = normalizedStudy.filter { recalledSet.contains($0) }.count
-                
                 VStack {
                     Text("Results")
                         .font(.title2)
-                        .padding(.top)
-                    
-                    Text("Correct: \(correctCount) / \(studyList.count)")
-                        .font(.headline)
-                        .padding(.bottom, 4)
+                        .padding()
                     
                     ScrollView {
                         VStack(alignment: .leading, spacing: 8) {
-                            // Use indices so duplicates are handled per-position
-                            ForEach(Array(studyList.enumerated()), id: \.offset) { idx, original in
-                                let isHit = recalledSet.contains(normalizedStudy[idx])
-                                Text(original)
-                                    .foregroundColor(isHit ? .red : .primary)
+                            let recalledSet = Set(
+                                recalledWords
+                                    .lowercased()
+                                    .components(separatedBy: CharacterSet(charactersIn: " ,\n"))
+                                    .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+                                    .filter { !$0.isEmpty }
+                            )
+                            
+                            ForEach(studyList, id: \.self) { word in
+                                Text(word)
+                                    .foregroundColor(recalledSet.contains(word.lowercased()) ? .red : .primary)
                                     .font(.headline)
                             }
                         }
@@ -168,15 +172,6 @@ struct FreeRecallTestView: View {
         .onAppear {
             loadWords()
         }
-        .onDisappear {
-            timer?.invalidate()
-        }
-    }
-    
-    // MARK: - Utilities
-    private func normalize(_ s: String) -> String {
-        s.trimmingCharacters(in: .whitespacesAndNewlines)
-         .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
     }
     
     // MARK: - Persistence
@@ -184,11 +179,17 @@ struct FreeRecallTestView: View {
         if let data = try? JSONEncoder().encode(inputWords) {
             savedWords = data
         }
+        if let defsData = try? JSONEncoder().encode(inputDefs) {
+            savedDefs = defsData
+        }
     }
     
     private func loadWords() {
         if let words = try? JSONDecoder().decode([String].self, from: savedWords) {
             inputWords = words
+        }
+        if let defs = try? JSONDecoder().decode([String].self, from: savedDefs) {
+            inputDefs = defs
         }
     }
     
@@ -222,7 +223,6 @@ struct FreeRecallTestView: View {
     }
     
     private func resetTest() {
-        // keep words so you can reuse list
         studyList = []
         recalledWords = ""
         phase = .input

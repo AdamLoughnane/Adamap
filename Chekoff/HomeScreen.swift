@@ -26,9 +26,7 @@ struct HomeScreen: View {
                     }
                     
                     NavigationLink {
-                        Text("Statistics (coming soon)")
-                            .font(.title3)
-                            .foregroundColor(.secondary)
+                        BreathView()
                     } label: {
                         HomeButton(title: "Breath", systemImage: "chart.bar.fill", color: .red)
                     }
