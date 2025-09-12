@@ -4,6 +4,7 @@
 *.xccheckout
 *.xcscmblueprint
 *.xcworkspace/xcuserdata/
+*.xcworkspace/xcshareddata/
 xcuserdata/
 
 # Swift Package Manager
@@ -74,8 +75,6 @@ build/
 *.tif
 *.ico
 
-*.xcuserstate
-DerivedData/
-build/
-.DS_Store
-*.xcworkspace/xcuserdata/
+# Keep resource media files
+!Chekoff/Resources/*.mov
+!Chekoff/Resources/*.mp3
