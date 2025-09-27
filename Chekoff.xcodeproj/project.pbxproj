@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F1D1A9A2E8486BD00B011ED /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1D1A992E8486BD00B011ED /* UserNotifications.framework */; };
+		9F1D1A9C2E8486BD00B011ED /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F1D1A9B2E8486BD00B011ED /* UserNotificationsUI.framework */; };
+		9F4C01AA2E871BFB006C8241 /* EyeExerciseExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9F1D1A972E8486BC00B011ED /* EyeExerciseExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9F685F202E720CAC00633E14 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 9F685F1F2E720CAC00633E14 /* Lottie */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9F1D1AA42E8486BD00B011ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FA525CD2E638D28008F9E72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F1D1A962E8486BC00B011ED;
+			remoteInfo = EyeExerciseExtension;
+		};
 		9FA525E32E638D2B008F9E72 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FA525CD2E638D28008F9E72 /* Project object */;
@@ -28,6 +38,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		9F1D1AA62E8486BD00B011ED /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F4C01A92E871B94006C8241 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9F4C01AA2E871BFB006C8241 /* EyeExerciseExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F6336B02E72175F00DC4E27 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -41,14 +72,45 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9FA525D52E638D28008F9E72 /* AdamApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdamApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1D1A972E8486BC00B011ED /* EyeExerciseExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EyeExerciseExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1D1A992E8486BD00B011ED /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		9F1D1A9B2E8486BD00B011ED /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
+		9FA525D52E638D28008F9E72 /* Chekoff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chekoff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA525E22E638D2B008F9E72 /* ChekoffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChekoffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FA525EC2E638D2B008F9E72 /* ChekoffUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChekoffUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9F1D1AAE2E848A4600B011ED /* Exceptions for "Chekoff" folder in "AdamApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				silent.wav,
+			);
+			target = 9FA525D42E638D28008F9E72 /* AdamApp */;
+		};
+		9F4C01B42E873C19006C8241 /* Exceptions for "EyeExerciseExtension" folder in "EyeExerciseExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 9F1D1A962E8486BC00B011ED /* EyeExerciseExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		9F1D1A9D2E8486BD00B011ED /* EyeExerciseExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9F4C01B42E873C19006C8241 /* Exceptions for "EyeExerciseExtension" folder in "EyeExerciseExtension" target */,
+			);
+			path = EyeExerciseExtension;
+			sourceTree = "<group>";
+		};
 		9FA525D72E638D28008F9E72 /* Chekoff */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9F1D1AAE2E848A4600B011ED /* Exceptions for "Chekoff" folder in "AdamApp" target */,
+			);
 			path = Chekoff;
 			sourceTree = "<group>";
 		};
@@ -65,6 +127,15 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F1D1A942E8486BC00B011ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F1D1A9C2E8486BD00B011ED /* UserNotificationsUI.framework in Frameworks */,
+				9F1D1A9A2E8486BD00B011ED /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FA525D22E638D28008F9E72 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -90,12 +161,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F1D1A982E8486BC00B011ED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F1D1A992E8486BD00B011ED /* UserNotifications.framework */,
+				9F1D1A9B2E8486BD00B011ED /* UserNotificationsUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9FA525CC2E638D28008F9E72 = {
 			isa = PBXGroup;
 			children = (
 				9FA525D72E638D28008F9E72 /* Chekoff */,
 				9FA525E52E638D2B008F9E72 /* ChekoffTests */,
 				9FA525EF2E638D2B008F9E72 /* ChekoffUITests */,
+				9F1D1A9D2E8486BD00B011ED /* EyeExerciseExtension */,
+				9F1D1A982E8486BC00B011ED /* Frameworks */,
 				9FA525D62E638D28008F9E72 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,9 +185,10 @@
 		9FA525D62E638D28008F9E72 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9FA525D52E638D28008F9E72 /* AdamApp.app */,
+				9FA525D52E638D28008F9E72 /* Chekoff.app */,
 				9FA525E22E638D2B008F9E72 /* ChekoffTests.xctest */,
 				9FA525EC2E638D2B008F9E72 /* ChekoffUITests.xctest */,
+				9F1D1A972E8486BC00B011ED /* EyeExerciseExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +196,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9F1D1A962E8486BC00B011ED /* EyeExerciseExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F1D1AAB2E8486BD00B011ED /* Build configuration list for PBXNativeTarget "EyeExerciseExtension" */;
+			buildPhases = (
+				9F1D1A932E8486BC00B011ED /* Sources */,
+				9F1D1A942E8486BC00B011ED /* Frameworks */,
+				9F1D1A952E8486BC00B011ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				9F1D1A9D2E8486BD00B011ED /* EyeExerciseExtension */,
+			);
+			name = EyeExerciseExtension;
+			packageProductDependencies = (
+			);
+			productName = EyeExerciseExtension;
+			productReference = 9F1D1A972E8486BC00B011ED /* EyeExerciseExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		9FA525D42E638D28008F9E72 /* AdamApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FA525F62E638D2B008F9E72 /* Build configuration list for PBXNativeTarget "AdamApp" */;
@@ -121,10 +226,13 @@
 				9FA525D22E638D28008F9E72 /* Frameworks */,
 				9FA525D32E638D28008F9E72 /* Resources */,
 				9F6336B02E72175F00DC4E27 /* Embed Frameworks */,
+				9F1D1AA62E8486BD00B011ED /* Embed Foundation Extensions */,
+				9F4C01A92E871B94006C8241 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9F1D1AA52E8486BD00B011ED /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				9FA525D72E638D28008F9E72 /* Chekoff */,
@@ -134,7 +242,7 @@
 				9F685F1F2E720CAC00633E14 /* Lottie */,
 			);
 			productName = Chekoff;
-			productReference = 9FA525D52E638D28008F9E72 /* AdamApp.app */;
+			productReference = 9FA525D52E638D28008F9E72 /* Chekoff.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9FA525E12E638D2B008F9E72 /* ChekoffTests */ = {
@@ -190,9 +298,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1640;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
+					9F1D1A962E8486BC00B011ED = {
+						CreatedOnToolsVersion = 26.0;
+					};
 					9FA525D42E638D28008F9E72 = {
 						CreatedOnToolsVersion = 16.4;
 					};
@@ -226,11 +337,19 @@
 				9FA525D42E638D28008F9E72 /* AdamApp */,
 				9FA525E12E638D2B008F9E72 /* ChekoffTests */,
 				9FA525EB2E638D2B008F9E72 /* ChekoffUITests */,
+				9F1D1A962E8486BC00B011ED /* EyeExerciseExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9F1D1A952E8486BC00B011ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FA525D32E638D28008F9E72 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,6 +374,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F1D1A932E8486BC00B011ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FA525D12E638D28008F9E72 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -279,6 +405,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9F1D1AA52E8486BD00B011ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F1D1A962E8486BC00B011ED /* EyeExerciseExtension */;
+			targetProxy = 9F1D1AA42E8486BD00B011ED /* PBXContainerItemProxy */;
+		};
 		9FA525E42E638D2B008F9E72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9FA525D42E638D28008F9E72 /* AdamApp */;
@@ -292,6 +423,64 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		9F1D1AA82E8486BD00B011ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TX22DX7NB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EyeExerciseExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EyeExerciseExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.khora.Chekoff.EyeExerciseExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F1D1AA92E8486BD00B011ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7TX22DX7NB;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EyeExerciseExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EyeExerciseExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.khora.Chekoff.EyeExerciseExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		9FA525F42E638D2B008F9E72 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -423,19 +612,20 @@
 				DEVELOPMENT_TEAM = 7TX22DX7NB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Adamap;
+				INFOPLIST_KEY_CFBundleDisplayName = Chekoff;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.khora.Chekoff.Chekoff;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.khora.Chekoff;
+				PRODUCT_NAME = Chekoff;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,19 +642,20 @@
 				DEVELOPMENT_TEAM = 7TX22DX7NB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Adamap;
+				INFOPLIST_KEY_CFBundleDisplayName = Chekoff;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.khora.Chekoff.Chekoff;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.khora.Chekoff;
+				PRODUCT_NAME = Chekoff;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -546,6 +737,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F1D1AAB2E8486BD00B011ED /* Build configuration list for PBXNativeTarget "EyeExerciseExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F1D1AA82E8486BD00B011ED /* Debug */,
+				9F1D1AA92E8486BD00B011ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9FA525D02E638D28008F9E72 /* Build configuration list for PBXProject "Chekoff" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

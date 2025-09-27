@@ -1,14 +1,20 @@
 import SwiftUI
+import UserNotifications
 
 @main
 struct ChekoffApp: App {
     init() {
-        NotificationManager.shared.requestPermission()
+        // 👇 make sure notifications show even when unlocked or in foreground
+        UNUserNotificationCenter.current().delegate = NotificationDelegate.shared
     }
     
     var body: some Scene {
         WindowGroup {
             HomeScreen()
+                .onAppear {
+                    NotificationManager.shared.requestPermission()
+                    NotificationManager.shared.scheduleHalfHourReminders()
+                }
         }
     }
 }
